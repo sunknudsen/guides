@@ -261,12 +261,12 @@ Fingerprint matches published fingerprints
 ### Step 9: download and verify [bitcoind.service](./bitcoind.service)
 
 ```console
-$ curl --fail --output /lib/systemd/system/bitcoind.service https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/bitcoind.service
+$ curl --fail --output /lib/systemd/system/bitcoind.service https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/bitcoind.service
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  2184  100  2184    0     0   2112      0  0:00:01  0:00:01 --:--:--  2114
 
-$ curl --fail --output /lib/systemd/system/bitcoind.service.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/bitcoind.service.asc
+$ curl --fail --output /lib/systemd/system/bitcoind.service.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/bitcoind.service.asc
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   228  100   228    0     0    258      0 --:--:-- --:--:-- --:--:--   258
@@ -289,12 +289,12 @@ Good signature
 ### Step 10: download and verify [electrs.service](./electrs.service)
 
 ```console
-$ curl --fail --output /lib/systemd/system/electrs.service https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/electrs.service
+$ curl --fail --output /lib/systemd/system/electrs.service https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/electrs.service
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   466  100   466    0     0    451      0  0:00:01  0:00:01 --:--:--   451
 
-$ curl --fail --output /lib/systemd/system/electrs.service.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/electrs.service.asc
+$ curl --fail --output /lib/systemd/system/electrs.service.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/electrs.service.asc
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   228  100   228    0     0    235      0 --:--:-- --:--:-- --:--:--   235
@@ -317,12 +317,12 @@ Good signature
 ### Step 11: download and verify [tor-client-auth.sh](./tor-client-auth.sh)
 
 ```console
-$ curl --fail --output /usr/bin/tor-client-auth.sh https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/tor-client-auth.sh
+$ curl --fail --output /usr/bin/tor-client-auth.sh https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/tor-client-auth.sh
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  1239  100  1239    0     0   1075      0  0:00:01  0:00:01 --:--:--  1076
 
-$ curl --fail --output /usr/bin/tor-client-auth.sh.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/tor-client-auth.sh.asc
+$ curl --fail --output /usr/bin/tor-client-auth.sh.asc https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/tor-client-auth.sh.asc
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   228  100   228    0     0    196      0  0:00:01  0:00:01 --:--:--   196

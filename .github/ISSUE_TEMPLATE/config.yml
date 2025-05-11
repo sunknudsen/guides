@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Have feedback or need help?
-    url: https://github.com/sunknudsen/privacy-guides/discussions
-    about: Please check out discussions
+  - name: Need help with a guide or wish to discuss a privacy or security topic?
+    url: https://github.com/sunknudsen/guides/discussions
+    about: Please use discussions

@@ -1,5 +1,5 @@
-# Privacy guides reference material (archived)
+# Explore guides
 
-The privacy guides project has been an amazing learning experience and I would like to thank everyone who has contributed to this repository which is now archived.
+This is a collection of guides I use to automate workflows and enhance the privacy and security of apps and devices.
 
-Shout-out to [1984](https://www.1984hosting.com/), [Njalla](https://njal.la/), [rsync.net](https://rsync.net/), [SatoshiLabs](https://satoshilabs.com/) and [Shakepay](https://shakepay.com/) for supporting the privacy guides. 🙌
+Looking for the privacy guides [archive](/archive)?

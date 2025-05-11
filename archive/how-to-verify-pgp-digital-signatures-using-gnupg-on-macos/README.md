@@ -135,7 +135,7 @@ Good signature
 
 👍
 
-### Verify signed [file](https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh) using [detached signature](https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh.asc)
+### Verify signed [file](https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh) using [detached signature](https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh.asc)
 
 ```console
 $ gpg --verify app-cleaner.sh.asc

@@ -40,7 +40,7 @@ Go to [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US
 ```console
 $ cd "/Users/sunknudsen/Library/Application Support/Firefox/Profiles/rzrw17yo.default-release"
 
-$ curl --fail --remote-name https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-configure-firefox-for-privacy-and-security/user.js
+$ curl --fail --remote-name https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-configure-firefox-for-privacy-and-security/user.js
 ```
 
 ### Step 3: restart Firefox

@@ -32,7 +32,7 @@ $ sudo apt install -y bc curl openssl sysbench
 ### Step 2: download (and optionally verify) [benchmark.sh](./benchmark.sh) ([PGP signature](./benchmark.sh.asc), [PGP public key](https://sunknudsen.com/sunknudsen.asc))
 
 ```shell
-curl --fail --output $HOME/benchmark.sh https://raw.githubusercontent.com/sunknudsen/privacy-guides/master/how-to-self-host-hardened-bitcoin-node/misc/how-to-benchmark-computer-for-bitcoin-computation/benchmark.sh
+curl --fail --output $HOME/benchmark.sh https://raw.githubusercontent.com/sunknudsen/privacy-guides/main/archive/how-to-self-host-hardened-bitcoin-node/misc/how-to-benchmark-computer-for-bitcoin-computation/benchmark.sh
 chmod +x $HOME/benchmark.sh
 ```
 
@@ -81,7 +81,7 @@ Done
 
 ### Step 4 (optional): publish JSON code block to GitHub discussion
 
-Go to https://github.com/sunknudsen/privacy-guides/discussions/220 and publish JSON code block as comment.
+Go to https://github.com/sunknudsen/guides/discussions/220 and publish JSON code block as comment.
 
 ```json
 {
