@@ -34,7 +34,7 @@ $ curl --fail --remote-name https://raw.githubusercontent.com/arkenfox/user.js/r
 > Heads-up: enables [Mullvad DNS over HTTPS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/).
 
 ```console
-$ curl --fail --remote-name https://sunknudsen.com/guides/how-to-configure-firefox-for-privacy-and-security/user-overrides.js
+$ curl --fail --remote-name https://sunknudsen.com/guides/how-to-harden-firefox/user-overrides.js
 
 $ cat user-overrides.js >> user.js
 ```
