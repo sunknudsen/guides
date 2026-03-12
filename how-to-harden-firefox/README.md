@@ -7,9 +7,9 @@ Pinned: 1
 
 ## Setup
 
-### Step 1: install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+### Step 1: install [Firefox](https://www.firefox.com/)
 
-Go to [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/), download and install Firefox.
+Go to [https://www.firefox.com/](https://www.firefox.com/), download and install Firefox.
 
 ### Step 2: add [arkenfox/user.js](https://github.com/arkenfox/user.js/) to profile
 
@@ -19,7 +19,7 @@ Go to [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US
 
 #### Find default profile root directory and copy path to clipboard.
 
-#### Download `user.js` to default profile root directory.
+#### Download user.js to default profile root directory.
 
 > Heads-up: replace `/Users/sunknudsen/Library/Application Support/Firefox/Profiles/rzrw17yo.default-release` with default profile root directory copied to clipboard.
 
@@ -41,17 +41,11 @@ $ cat user-overrides.js >> user.js
 
 ### Step 4 (optional): enable [Mullvad SOCKS5 proxy](https://mullvad.net/en/help/socks5-proxy) kill switch (disabled by default, Mullvad [app](https://mullvad.net/en/download) and [subscription](https://mullvad.net/en/pricing) required)
 
-Open `user.js` and `user-overrides.js` using text editor and set `network.proxy.type` to `1`.
+Open user.js and user-overrides.js using text editor and set “network.proxy.type” to “1”.
 
-### Step 5: restart Firefox
+### Step 5 (optional): install [GitHub Dark Default Faded](https://addons.mozilla.org/addon/github-dark-default-faded/) theme
 
-### Step 6: install [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/) and [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/) extensions
-
-#### Go to [https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/) and click “Add to Firefox”.
-
-#### Go to [https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/) and click “Add to Firefox”.
-
-> Heads-up: when asked to allow extension to run in private windows, check box and click “Okay”.
+### Step 6: restart Firefox
 
 ### Step 7: set default search engine to DuckDuckGo
 
@@ -60,20 +54,6 @@ Paste “about:preferences#search” in address bar, press <kbd>Enter</kbd> and 
 ### Step 8: uncheck all search shortcuts
 
 Paste “about:preferences#search” in address bar, press <kbd>Enter</kbd> and uncheck all search shortcuts.
-
-### Step 9: configure containers (see episode)
-
-### Step 10: check for DNS and WebRTC leaks
-
-Go to [https://mullvad.net/en/check](https://mullvad.net/en/check).
-
-![Connection check](connection-check.png)
-
-No DNS leaks
-
-No WebRTC leaks
-
-👍
 
 ---
 
@@ -91,4 +71,4 @@ Uncheck “Delete cookies and site data when Firefox is closed”.
 
 ## Want things back the way they were before following this guide?
 
-### Delete `user.js` and `user-overrides.js` and set Firefox settings as they were before following guide.
+### Delete user.js and user-overrides.js and set Firefox settings as they were before following guide.
