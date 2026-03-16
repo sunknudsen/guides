@@ -33,7 +33,7 @@ $ curl --fail --remote-name https://raw.githubusercontent.com/arkenfox/user.js/r
 
 > Heads-up: enables [Mullvad DNS over HTTPS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/).
 >
-> Mullvad DNS over HTTPS uses Anycast for DNS query routing via BGP. As a result, server selection is determined by BGP routing policies rather than geographic proximity and may route DNS queries to distant servers. If browsing feels slow, consider bypassing Anycast by [specifying](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls#server-locations) DNS server using `network.trr.custom_uri` and `network.trr.custom_uri` in [user-overrides.js](./user-overrides.js) (for example: https://us-nyc-dns-601.mullvad.net/dns-query for North America’s East Coast).
+> Mullvad DNS over HTTPS uses Anycast for DNS query routing via BGP. As a result, server selection is determined by BGP routing policies rather than geographic proximity and may route DNS queries to distant servers. If browsing feels slow, consider bypassing Anycast by [specifying](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls#server-locations) DNS server using `network.trr.custom_uri` and `network.trr.uri` in [user-overrides.js](./user-overrides.js) (for example: https://us-nyc-dns-601.mullvad.net/dns-query for North America’s East Coast).
 
 ```console
 $ curl --fail --remote-name https://sunknudsen.com/guides/how-to-harden-firefox/user-overrides.js
@@ -43,7 +43,7 @@ $ cat user-overrides.js >> user.js
 
 ### Step 4 (optional): enable [Mullvad SOCKS5 proxy](https://mullvad.net/en/help/socks5-proxy) kill switch (disabled by default, Mullvad [app](https://mullvad.net/en/download) and [subscription](https://mullvad.net/en/pricing) required)
 
-Open user.js and user-overrides.js using text editor and set “network.proxy.type” to “1”.
+Open user.js and user-overrides.js using text editor and set `network.proxy.type` to `1`.
 
 ### Step 5 (optional): install [GitHub Dark Default Faded](https://addons.mozilla.org/addon/github-dark-default-faded/) theme
 
