@@ -29,9 +29,11 @@ $ cd "/Users/sunknudsen/Library/Application Support/Firefox/Profiles/rzrw17yo.de
 $ curl --fail --remote-name https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/user.js
 ```
 
-### Step 3: append [user-overrides.js](./user-overrides.js) to `user.js`
+### Step 3: append [user-overrides.js](./user-overrides.js) to user.js
 
 > Heads-up: enables [Mullvad DNS over HTTPS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/).
+>
+> Mullvad DNS over HTTPS uses Anycast for DNS query routing via BGP. As a result, server selection is determined by BGP routing policies rather than geographic proximity and may route DNS queries to distant servers. If browsing feels slow, consider bypassing Anycast by [specifying](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls#server-locations) DNS server using `network.trr.custom_uri` and `network.trr.custom_uri` in [user-overrides.js](./user-overrides.js) (for example: https://us-nyc-dns-601.mullvad.net/dns-query for North America’s East Coast).
 
 ```console
 $ curl --fail --remote-name https://sunknudsen.com/guides/how-to-harden-firefox/user-overrides.js
