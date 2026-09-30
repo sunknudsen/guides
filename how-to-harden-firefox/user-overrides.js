@@ -17,6 +17,7 @@ user_pref("network.proxy.type", 0); // Used to enable Mullvad SOCKS5 proxy… se
 // Personal preferences (not privacy or security related)
 user_pref("browser.aboutwelcome.enabled", false);
 user_pref("browser.backup.enabled", false);
+user_pref("browser.ipProtection.enabled", false);
 user_pref("browser.ml.chat.shortcuts", false);
 user_pref("browser.ml.enable", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
