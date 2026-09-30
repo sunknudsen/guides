@@ -68,19 +68,13 @@ $ cat user-overrides.js >> user.js
 
 Open user.js using text editor and set `network.proxy.type` to `1`.
 
-### Step 7 (optional): install [GitHub Dark Default Faded](https://addons.mozilla.org/addon/github-dark-default-faded/) theme
-
-### Step 8: start Firefox
+### Step 7: start Firefox
 
 > Heads-up: hardened Firefox favors privacy and security over convenience… expect blank page on startup, prompts when downloading files, warnings on sites that do not support HTTPS and cookies being deleted when Firefox closes (see [usage](#usage)).
 
-### Step 9: set default search engine to DuckDuckGo
+### Step 8: configure search
 
-Paste “about:preferences#search” in address bar, press <kbd>Enter</kbd> and set default search engine to “DuckDuckGo”.
-
-### Step 10: uncheck all search shortcuts except DuckDuckGo
-
-Paste “about:preferences#search” in address bar, press <kbd>Enter</kbd> and uncheck all search shortcuts except “DuckDuckGo”.
+Paste “about:preferences#search” in address bar, press <kbd>Enter</kbd>, set default search engine to “DuckDuckGo” and uncheck all search shortcuts except “DuckDuckGo”.
 
 ## Usage
 
