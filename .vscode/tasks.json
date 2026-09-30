@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Lint",
+      "command": "node scripts/lint.ts '${relativeFile}'",
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Organize steps",
+      "command": "node scripts/organize-steps.ts '${relativeFile}'",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Preview markdown",
+      "command": "node scripts/preview-markdown.ts '${relativeFile}'",
+      "isBackground": true,
+      // First instance keeps server running, subsequent instances open files and exit
+      "runOptions": {
+        "instanceLimit": 2
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
