@@ -133,3 +133,7 @@ $ mv search.json.mozlz4.orig search.json.mozlz4
 ```
 
 Start Firefox.
+
+---
+
+Found this guide useful? [Star repo](https://github.com/sunknudsen/guides) or [support project](https://sunknudsen.com/donate).

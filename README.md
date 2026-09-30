@@ -6,7 +6,7 @@ Looking for the privacy guides [archive](/archive)?
 
 ## Support this project
 
-If these guides are useful to you, please [star repo](https://github.com/sunknudsen/guides) and consider [supporting project](https://sunknudsen.com/donate).
+Find these guides useful? Consider [starring repo](https://github.com/sunknudsen/guides) or [supporting project](https://sunknudsen.com/donate).
 
 ## Contributing
 

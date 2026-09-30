@@ -34,6 +34,12 @@ Instruction, or several h4 sub-steps.
 ## Update …
 
 ## Want things back the way they were before following this guide?
+
+Last instruction.
+
+---
+
+Found this guide useful? [Star repo](https://github.com/sunknudsen/guides) or [support project](https://sunknudsen.com/donate).
 ```
 
 See `how-to-harden-firefox/README.md` for a complete guide following these conventions.
@@ -43,7 +49,8 @@ See `how-to-harden-firefox/README.md` for a complete guide following these conve
 - Sub-steps are h4 headings only when a step has several. A step with a single instruction states it as a plain sentence.
 - Usage sections are h3 headings describing the task, not steps.
 - Setup, update and revert sections are self-contained… repeat commands rather than referring readers to other steps for them.
-- No horizontal rules (GitHub already underlines h2).
+- No horizontal rules next to headings (GitHub already underlines h2)… the only rule is the one separating the support footer from the last instruction.
+- Every guide ends with the support footer shown above, word for word, after a horizontal rule.
 
 ## Heads-ups
 
