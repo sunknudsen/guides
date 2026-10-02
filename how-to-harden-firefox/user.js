@@ -149,6 +149,7 @@ user_pref("browser.newtabpage.activity-stream.widgets.enabled", false); // Used 
 user_pref("browser.newtabpage.activity-stream.widgets.weather.enabled", false); // Used to hide weather widget on Firefox Home [locked]
 user_pref("browser.newtabpage.enabled", false); // Used to open blank new tabs instead of Firefox Home [locked]
 user_pref("browser.search.suggest.enabled", false); // Used to disable search suggestions… may be switched on in settings until Firefox restarts [unlocked]
+user_pref("browser.search.suggest.enabled.private", false); // Used to disable search suggestions in private windows… may be switched on in settings until Firefox restarts [unlocked]
 user_pref("browser.startup.homepage", "about:blank"); // Used to open blank home page [locked]
 user_pref("browser.startup.page", 0); // Used to start with blank page instead of home page or previous session [locked]
 user_pref("browser.urlbar.quickactions.enabled", false); // Used to disable quick actions in address bar [locked]
