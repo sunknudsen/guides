@@ -133,7 +133,7 @@ user_pref("browser.ml.linkPreview.enabled", false); // Used to disable link prev
 user_pref("browser.tabs.groups.smart.userEnabled", false); // Used to disable smart tab groups [locked]
 user_pref("browser.translations.enable", false); // Used to disable translations [locked]
 user_pref("pdfjs.enableAltText", false); // Used to disable PDF alt text generation [locked]
-// Firefox Home and address bar (FirefoxHome, FirefoxSuggest and SearchSuggestEnabled policies)
+// Firefox Home and address bar (FirefoxHome and FirefoxSuggest policies)
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false); // Used to hide highlights on Firefox Home [locked]
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Used to hide stories on Firefox Home [locked]
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false); // Used to hide top sites on Firefox Home [locked]
@@ -148,7 +148,7 @@ user_pref("browser.newtabpage.activity-stream.showWeather", false); // Used to h
 user_pref("browser.newtabpage.activity-stream.widgets.enabled", false); // Used to hide widgets on Firefox Home [locked]
 user_pref("browser.newtabpage.activity-stream.widgets.weather.enabled", false); // Used to hide weather widget on Firefox Home [locked]
 user_pref("browser.newtabpage.enabled", false); // Used to open blank new tabs instead of Firefox Home [locked]
-user_pref("browser.search.suggest.enabled", false); // Used to disable search suggestions [locked]
+user_pref("browser.search.suggest.enabled", false); // Used to disable search suggestions… may be switched on in settings until Firefox restarts [unlocked]
 user_pref("browser.startup.homepage", "about:blank"); // Used to open blank home page [locked]
 user_pref("browser.startup.page", 0); // Used to start with blank page instead of home page or previous session [locked]
 user_pref("browser.urlbar.quickactions.enabled", false); // Used to disable quick actions in address bar [locked]
@@ -159,7 +159,7 @@ user_pref("browser.urlbar.suggest.engines", false); // Used to hide search engin
 user_pref("browser.urlbar.suggest.quickactions", false); // Used to hide quick actions in address bar [locked]
 user_pref("browser.urlbar.suggest.quicksuggest.all", false); // Used to hide Firefox Suggest results in address bar [locked]
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // Used to hide sponsored suggestions in address bar [locked]
-user_pref("browser.urlbar.suggest.searches", false); // Used to hide search suggestions in address bar [locked]
+user_pref("browser.urlbar.suggest.searches", false); // Used to hide search suggestions in address bar… may be switched on in settings until Firefox restarts [unlocked]
 user_pref("browser.urlbar.suggest.topsites", false); // Used to hide top sites in address bar [locked]
 user_pref("browser.urlbar.suggest.trending", false); // Used to hide trending searches in address bar [locked]
 // Mozilla messaging (UserMessaging, OverrideFirstRunPage, OverridePostUpdatePage and DontCheckDefaultBrowser policies)

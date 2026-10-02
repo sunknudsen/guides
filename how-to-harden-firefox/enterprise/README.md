@@ -4,7 +4,7 @@ Deployable versions of the settings in [user.js](../user.js) for organizations a
 
 ## Files
 
-- [firefox.cfg](./firefox.cfg) is generated from user.js and loaded by [autoconfig](https://support.mozilla.org/kb/customizing-firefox-using-autoconfig) at startup. Every setting in user.js ends with a tag saying how managed devices treat it… `[locked]` becomes `lockPref` so it cannot be changed from inside Firefox, `[unlocked]` becomes `pref`, set at every start but changeable until Firefox restarts (the two settings that let a user keep sessions across a restart), and `[excluded]` is left out (the Mullvad proxy and personal preferences).
+- [firefox.cfg](./firefox.cfg) is generated from user.js and loaded by [autoconfig](https://support.mozilla.org/kb/customizing-firefox-using-autoconfig) at startup. Every setting in user.js ends with a tag saying how managed devices treat it… `[locked]` becomes `lockPref` so it cannot be changed from inside Firefox, `[unlocked]` becomes `pref`, set at every start but changeable until Firefox restarts (settings whose checkbox Firefox cannot show as locked… keeping sessions across a restart and search suggestions), and `[excluded]` is left out (the Mullvad proxy and personal preferences).
 - [autoconfig.js](./autoconfig.js) tells Firefox to load firefox.cfg.
 - [policies.json](./policies.json) is the same hardening as an [enterprise policy](https://mozilla.github.io/policy-templates/)… it adds what preferences cannot express (DuckDuckGo as the only search engine, feature switches, locked settings pages), forbids installing extensions and themes and stands on its own for deployments that cannot use autoconfig. Every preference a policy sets matches user.js, checked by the guide’s linter.
 
@@ -12,7 +12,7 @@ Deployable versions of the settings in [user.js](../user.js) for organizations a
 
 > Heads-up: autoconfig files live inside Firefox installation folder and are removed by Firefox updates on macOS and Windows… reinstall them after updating or deploy policies.json instead.
 
-Copy files to Firefox installation folder.
+Copy files to the paths below.
 
 | Platform                 | firefox.cfg                                    | autoconfig.js                                                  | policies.json                                                 |
 | ------------------------ | ---------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------- |
