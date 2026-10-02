@@ -12,7 +12,7 @@ $ node how-to-harden-firefox/scripts/generate-firefox-cfg.ts
 
 ## Check settings against a Firefox release
 
-To catch settings Firefox renamed or removed and policies it no longer knows, check user.js and policies.json against a Firefox version (the current release when none is given)… run it after each Firefox release.
+To catch settings Firefox renamed or removed, policies it no longer knows and search engines the SearchEngines policy misses or no longer needs (Firefox refreshes its engine list on its own, independently of releases), check user.js and policies.json against a Firefox version (the current release when none is given)… run it after each Firefox release and now and then in between.
 
 ```console
 $ node how-to-harden-firefox/scripts/check-firefox-settings.ts 157.0

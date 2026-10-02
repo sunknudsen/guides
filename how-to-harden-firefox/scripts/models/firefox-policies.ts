@@ -301,7 +301,8 @@ const policyPreferences: Record<string, (value: unknown) => Preferences> = {
 export const policyOnly: Record<string, string> = {
   DisableRemoteImprovements:
     "sets a policy flag… nimbus.rollouts.enabled is the preference",
-  SearchEngines: "default search engine is set in settings, not preferences",
+  SearchEngines:
+    "search engines are set in settings, not preferences… DuckDuckGo is made the default, the other built-in engines an English Firefox shows in any region are hidden (names missing in a locale are skipped) and installing engines from pages is blocked",
 }
 
 // Preferences policies set that user.js leaves at Firefox defaults, and why

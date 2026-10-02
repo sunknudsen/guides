@@ -1,6 +1,7 @@
 // Check the guide’s user.js and enterprise/policies.json against a Firefox
 // version… settings Firefox no longer declares or reads, policies it does not
-// know and settings that only restate a Firefox default.
+// know, settings that only restate a Firefox default and search engines the
+// SearchEngines policy misses or no longer needs.
 //
 // Usage: node how-to-harden-firefox/scripts/check-firefox-settings.ts [version]
 //
@@ -11,8 +12,13 @@
 // those are read. A few settings are read by code without ever being declared,
 // so each is listed below with the source file that reads it, and that file is
 // fetched and checked too. Anything else Firefox does not declare is a rename or
-// a removal. Run after each Firefox release and before pinning a version
-// elsewhere. Exits with status 1 when something needs attention.
+// a removal. The search engines Firefox offers come from a Remote Settings
+// collection it refreshes on its own, so the engines a release Firefox shows
+// for the guide’s locale in any region are fetched from there and compared
+// with the SearchEngines policy… every engine but the default must be removed,
+// and a removed name Firefox no longer ships is stale. Run after each Firefox
+// release, now and then in between for the search engines, and before pinning
+// a version elsewhere. Exits with status 1 when something needs attention.
 
 import { readFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path"
@@ -55,6 +61,30 @@ const prefixed: { file: string; prefix: string; regExp: RegExp }[] = [
 
 const schema =
   "browser/components/enterprisepolicies/schemas/policies-schema.json"
+
+// Where Firefox reads its search engines from, and the locale the guide’s
+// policy is written for
+const searchConfig =
+  "https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/search-config-v2/records"
+const searchLocale = "en-US"
+
+interface EngineVariant {
+  environment: {
+    allRegionsAndLocales?: boolean
+    applications?: string[]
+    channels?: string[]
+    distributions?: string[]
+    excludedLocales?: string[]
+    experiment?: string
+    locales?: string[]
+  }
+}
+
+interface EngineRecord {
+  recordType: string
+  base?: { name: string }
+  variants?: EngineVariant[]
+}
 
 // Settings Firefox reads without declaring a default, with the source file
 // that reads them and, when the file builds the name from parts, the text to
@@ -251,16 +281,49 @@ const policies = new Set(
   )
 )
 
+// Names of the engines a release desktop Firefox shows for the locale in at
+// least one region… partner, experiment, other-channel and other-application
+// variants do not count
+const shownEngines = (records: EngineRecord[]): Set<string> => {
+  const fits = ({ environment }: EngineVariant): boolean =>
+    (environment.distributions ?? []).length === 0 &&
+    environment.experiment === undefined &&
+    ((environment.applications ?? []).length === 0 ||
+      (environment.applications ?? []).includes("firefox")) &&
+    ((environment.channels ?? []).length === 0 ||
+      (environment.channels ?? []).includes("default")) &&
+    (environment.allRegionsAndLocales === true ||
+      (environment.locales ?? []).length === 0 ||
+      (environment.locales ?? []).includes(searchLocale)) &&
+    !(environment.excludedLocales ?? []).includes(searchLocale)
+  const names = new Set<string>()
+  for (const record of records) {
+    if (
+      record.recordType === "engine" &&
+      record.base !== undefined &&
+      (record.variants ?? []).some(fits)
+    ) {
+      names.add(record.base.name)
+    }
+  }
+  return names
+}
+
 const settings = parseUserPreferences(
   await readFile(join(guide, "user.js"), "utf8")
 )
-const used = Object.keys(
-  (
-    JSON.parse(
-      await readFile(join(guide, "enterprise", "policies.json"), "utf8")
-    ) as { policies: Record<string, unknown> }
-  ).policies
-)
+const deployed = (
+  JSON.parse(
+    await readFile(join(guide, "enterprise", "policies.json"), "utf8")
+  ) as {
+    policies: Record<string, unknown> & {
+      SearchEngines?: { Default?: string; Remove?: string[] }
+    }
+  }
+).policies
+const used = Object.keys(deployed)
+const searchDefault = deployed.SearchEngines?.Default
+const removed = deployed.SearchEngines?.Remove ?? []
 
 let problems = 0
 
@@ -305,10 +368,30 @@ for (const name of used) {
   }
 }
 
+const shown = shownEngines(
+  (JSON.parse(await fetchText(searchConfig)) as { data: EngineRecord[] }).data
+)
+for (const name of shown) {
+  if (name !== searchDefault && !removed.includes(name)) {
+    console.error(
+      `Search engine ${name} is shown for ${searchLocale} and not removed by policies.json`
+    )
+    problems++
+  }
+}
+for (const name of removed) {
+  if (!shown.has(name)) {
+    console.error(
+      `Search engine ${name} removed by policies.json is not shown for ${searchLocale}`
+    )
+    problems++
+  }
+}
+
 if (problems > 0) {
   process.exit(1)
 }
 
 console.info(
-  `Checked ${settings.size} settings and ${used.length} policies, nothing needs attention`
+  `Checked ${settings.size} settings, ${used.length} policies and ${shown.size} search engines, nothing needs attention`
 )

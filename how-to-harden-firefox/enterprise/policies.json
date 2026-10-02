@@ -64,7 +64,20 @@
       "Locked": true
     },
     "SearchEngines": {
-      "Default": "DuckDuckGo"
+      "Default": "DuckDuckGo",
+      "PreventInstalls": true,
+      "Remove": [
+        "Bing",
+        "eBay",
+        "Ecosia",
+        "Google",
+        "Perplexity",
+        "Qwant",
+        "Reddit",
+        "Startpage",
+        "Wikipedia (en)",
+        "YouTube"
+      ]
     },
     "SearchSuggestEnabled": false,
     "UserMessaging": {
