@@ -38,7 +38,6 @@ while [ $# -gt 0 ]; do
       ;;
     *)
       printf '%s\n' "Error: unknown option ${1}" >&2
-      help >&2
       exit 1
       ;;
   esac

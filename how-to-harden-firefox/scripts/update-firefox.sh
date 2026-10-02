@@ -57,13 +57,11 @@ while [ $# -gt 0 ]; do
       ;;
     -*)
       printf '%s\n' "Error: unknown option ${1}" >&2
-      help >&2
       exit 1
       ;;
     *)
       if [ -n "${profile}" ]; then
         printf '%s\n' "Error: unexpected argument ${1}" >&2
-        help >&2
         exit 1
       fi
       profile="${1}"
@@ -74,7 +72,6 @@ done
 
 if [ -z "${profile}" ]; then
   printf '%s\n' "Error: profile folder is required" >&2
-  help >&2
   exit 1
 fi
 

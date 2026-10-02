@@ -83,6 +83,8 @@ Open user.js using text editor and set `network.proxy.type` to `1`.
 >
 > Heads-up: user.js skips Firefox’s [terms of use](https://www.mozilla.org/about/legal/terms/firefox/) screen for profiles created from now on, as its data collection switch is on by default… terms apply by use regardless.
 >
+> Heads-up: Firefox Labs stays visible in settings, as only enterprise policies can hide it… nothing in it is enabled without clicking.
+>
 > Heads-up: macOS asks whether Firefox may find and connect to devices on local network the first time a local address is opened… if dismissed, local addresses such as routers fail with “Unable to connect” until Firefox is enabled under System Settings > Privacy & Security > Local Network.
 
 ### Step 8: configure search

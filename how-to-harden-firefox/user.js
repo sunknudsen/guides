@@ -168,7 +168,6 @@ user_pref("browser.aboutwelcome.enabled", false); // Used to skip onboarding [lo
 user_pref("browser.discovery.enabled", false); // Used to disable personalized extension recommendations [locked]
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); // Used to disable extension recommendations [locked]
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); // Used to disable feature recommendations [locked]
-user_pref("browser.preferences.experimental.hidden", true); // Used to hide Firefox Labs in settings [locked]
 user_pref("browser.preferences.moreFromMozilla", false); // Used to hide More from Mozilla in settings [locked]
 user_pref("browser.shell.checkDefaultBrowser", false); // Used to stop Firefox asking to become default browser [locked]
 user_pref("startup.homepage_override_url", ""); // Used to skip page shown after updates [locked]
@@ -200,7 +199,8 @@ user_pref("privacy.userContext.ui.enabled", false); // [excluded]
 // user_pref("privacy.resistFingerprinting.pbMode", true); // Typo of privacy.resistFingerprinting.pbmode
 // user_pref("privacy.spoof_english", 2); // Only affected private windows and never rewrote accept language header without resisting fingerprinting in regular windows
 // user_pref("extensions.pocket.enabled", false); // Pocket was shut down in 2025
-// user_pref("browser.preferences.experimental", false); // Replaced by browser.preferences.experimental.hidden
+// user_pref("browser.preferences.experimental", false); // Removed from Firefox
+// user_pref("browser.preferences.experimental.hidden", true); // Only a cache Firefox rewrites when Firefox Labs opt-ins exist… Firefox Labs is hidden by the UserMessaging policy alone
 // user_pref("network.predictor.enabled", false); // Network predictor was removed from Firefox between 140 and 150
 // user_pref("browser.urlbar.oneOffSearches", false); // Removed from Firefox
 // user_pref("geo.provider.use_corelocation", false); // Made Firefox fall back to its network location provider, which is less private
