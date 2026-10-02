@@ -1,2 +1,4 @@
 /archive
-/how-to-harden-firefox/user-overrides.js
+/how-to-harden-firefox/user.js
+/how-to-harden-firefox/enterprise/autoconfig.js
+/how-to-harden-firefox/enterprise/firefox.cfg

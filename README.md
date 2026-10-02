@@ -75,4 +75,4 @@ $ node scripts/lint.ts how-to-harden-firefox/README.md
 
 In VS Code, run the “Lint” task to lint the current file.
 
-Staged files are also linted before each commit by [.githooks/pre-commit](./.githooks/pre-commit) (see [Setup](#setup) to register hook). To run one linter only, use `scripts/lint-formatting.ts` or `scripts/lint-markdown.ts` the same way.
+Staged files are also linted before each commit by [.githooks/pre-commit](./.githooks/pre-commit) (see [Setup](#setup) to register hook). To run one linter only, use `scripts/lint-formatting.ts` or `scripts/lint-markdown.ts` the same way. A guide may ship tooling of its own in its scripts folder, documented there (see [how-to-harden-firefox/scripts](./how-to-harden-firefox/scripts/)).

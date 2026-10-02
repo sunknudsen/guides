@@ -10,6 +10,7 @@ Guides are published on GitHub for readers who may have little technical backgro
 ## Audience
 
 - Keep guides short. No lists of preferences, no technical asides, no reference sections… one plain-language heads-up beats a section explaining side effects.
+- A Highlights section follows the abstract with what following the guide achieves… only outcomes a reader would change their behaviour for, ordered from most to least critical, each a bold lead-in followed by one sentence that says what the reader gets, no settings names, and anything that needs a caveat to be true is left out.
 - Never require readers to type or quote paths. Use “Show in Finder” and drag and drop into Terminal, and show the resulting `cd` as an example they will recognise.
 - Prefer first-party sources (GitHub, Firefox source, vendor documentation) and avoid third-party scripts. When a script is unavoidable, ship our own, short enough to audit.
 - Everything a reader does not need is out of the guide.
@@ -18,6 +19,13 @@ Guides are published on GitHub for readers who may have little technical backgro
 
 ```markdown
 # How to …
+
+One-paragraph abstract: what the guide protects against and what readers get, ending with a link to the enterprise README when the guide ships one.
+
+## Highlights
+
+- **Outcome.** Detail…
+- **Outcome.** Detail…
 
 ## Setup
 
@@ -73,7 +81,7 @@ See `how-to-harden-firefox/README.md` for a complete guide following these conve
 - Cross-references are in-page links (`[step 2](#step-2-…)`), never bare step numbers, so renumbering keeps them valid.
 - Anchors follow GitHub’s slug rules (lowercase, punctuation removed, spaces to hyphens)… `scripts/utilities/slug.ts` computes them and the linter verifies them.
 - No bare URLs followed by punctuation (the autolinker swallows it)… wrap in backticks or link syntax.
-- Files shipped with a guide are linked relatively (`[user-overrides.js](./user-overrides.js)`).
+- Files shipped with a guide are linked relatively (`[user.js](./user.js)`).
 
 ## Console blocks
 
@@ -85,6 +93,8 @@ See `how-to-harden-firefox/README.md` for a complete guide following these conve
 ## Files shipped with a guide
 
 Scripts and settings files shipped with a guide follow the tooling rules in CLAUDE.md, and guide-specific facts live there too. Shell scripts are executable (`chmod +x`, git records the bit… check with `git ls-files -s`), even though guides run them with `sh` so readers need no `chmod`.
+
+Deployable versions of a guide’s settings for organizations live in an `enterprise` folder with its own README.md… the guide’s abstract links to it in one sentence and says nothing more about it. That README is written for administrators… it follows the typography and link rules but not the step structure, and anything generated from the guide’s settings says so and is checked by the guide’s linter, which lives with the guide’s other scripts in its `scripts` folder (see `how-to-harden-firefox/enterprise/` and `how-to-harden-firefox/scripts/`).
 
 ## After editing
 

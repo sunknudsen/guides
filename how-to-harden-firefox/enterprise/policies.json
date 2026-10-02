@@ -1,0 +1,80 @@
+{
+  "policies": {
+    "AIControls": {
+      "Default": {
+        "Value": "blocked",
+        "Locked": true
+      }
+    },
+    "AutofillAddressEnabled": false,
+    "AutofillCreditCardEnabled": false,
+    "BrowserDataBackup": {
+      "AllowBackup": false,
+      "AllowRestore": false
+    },
+    "Certificates": {
+      "ImportEnterpriseRoots": false
+    },
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisableRemoteImprovements": true,
+    "DisableTelemetry": true,
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "Fallback": false,
+      "ProviderURL": "https://dns.quad9.net/dns-query",
+      "Locked": true
+    },
+    "DontCheckDefaultBrowser": true,
+    "EnableTrackingProtection": {
+      "Category": "strict",
+      "Value": true,
+      "Locked": true
+    },
+    "FirefoxHome": {
+      "Highlights": false,
+      "Search": false,
+      "SponsoredStories": false,
+      "SponsoredTopSites": false,
+      "Stories": false,
+      "TopSites": false,
+      "Weather": false,
+      "Locked": true
+    },
+    "FirefoxSuggest": {
+      "ImproveSuggest": false,
+      "SponsoredSuggestions": false,
+      "WebSuggestions": false,
+      "Locked": true
+    },
+    "HttpsOnlyMode": "force_enabled",
+    "InstallAddonsPermission": {
+      "Default": false
+    },
+    "OfferToSaveLogins": false,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "PopupBlocking": {
+      "Default": true,
+      "Locked": true
+    },
+    "Proxy": {
+      "Mode": "none",
+      "Locked": true
+    },
+    "SearchEngines": {
+      "Default": "DuckDuckGo"
+    },
+    "SearchSuggestEnabled": false,
+    "UserMessaging": {
+      "ExtensionRecommendations": false,
+      "FeatureRecommendations": false,
+      "FirefoxLabs": false,
+      "MoreFromMozilla": false,
+      "SkipOnboarding": true,
+      "UrlbarInterventions": false,
+      "Locked": true
+    }
+  }
+}
