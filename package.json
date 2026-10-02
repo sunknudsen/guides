@@ -11,6 +11,7 @@
     "node": ">=22.18.0"
   },
   "scripts": {
+    "check-links": "node scripts/check-links.ts",
     "lint": "node scripts/lint.ts",
     "format": "prettier --write .",
     "prepare": "git config core.hooksPath .githooks",

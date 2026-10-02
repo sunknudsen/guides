@@ -3,6 +3,15 @@
   "tasks": [
     {
       "type": "shell",
+      "label": "Check links",
+      "command": "node scripts/check-links.ts '${relativeFile}'",
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
       "label": "Lint",
       "command": "node scripts/lint.ts '${relativeFile}'",
       "presentation": {

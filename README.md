@@ -12,7 +12,7 @@ Find these guides useful? Consider [starring repo](https://github.com/sunknudsen
 
 Contributions are welcome… open a [pull request](https://github.com/sunknudsen/guides/pulls) to improve guides, use [discussions](https://github.com/sunknudsen/guides/discussions) for feedback and questions and see [SECURITY.md](./SECURITY.md) to responsibly disclose vulnerabilities.
 
-Following sections cover tooling used to edit guides ([Node.js](https://nodejs.org/) 22.18 or newer required)… run `npm run lint` to lint every file.
+Following sections cover tooling used to edit guides ([Node.js](https://nodejs.org/) 22.18 or newer required)… run `npm run check-links` to check every link and `npm run lint` to lint every file.
 
 ### Setup
 
@@ -65,9 +65,19 @@ $ node scripts/organize-steps.ts how-to-harden-firefox/README.md
 
 In VS Code, run the “Organize steps” task to organize the current file.
 
+### Check links
+
+Checks the links in guides, documentation and comments, reporting each place a link appears as file:line… a link is dead when the server cannot be reached or answers 404 or 410, moved when a permanent redirect leads to another address (redirects that only add a locale segment such as “/en-US/” are ignored, as Mozilla’s sites add one to every link) and unverifiable when the server keeps throttling or answers with a bot challenge page instead of the content. Hosts are fetched one link at a time, up to ten hosts at once, and a link throttled with 429 or 503 is retried once after the pause the server asks for. Mozilla’s support site challenges every page, so its knowledge base links are checked through the article’s discussion feed, which Mozilla leaves open for feed readers and answers 404 for a missing article (a renamed article keeps its feed, so a move there goes unnoticed). Dead and moved links exit with status 1, unverifiable ones are listed for a check in a browser (all text files outside archive are checked when no file is given). Needs the network, so it is run by hand rather than by the linter… run it now and then, and before publishing a guide.
+
+```console
+$ node scripts/check-links.ts how-to-harden-firefox/README.md
+```
+
+In VS Code, run the “Check links” task to check the current file.
+
 ### Lint
 
-Checks that files are formatted by [Prettier](https://prettier.io/), reporting the lines that differ from what Prettier would produce (run `npm run format` to fix), and checks guides for broken in-page anchors, broken relative links, out-of-order steps, unclosed code fences, skipped heading levels and straight quotes or three dots in prose (all files outside archive are checked when no file is given).
+Checks that files are formatted by [Prettier](https://prettier.io/), reporting the lines that differ from what Prettier would produce (run `npm run format` to fix), and checks guides for broken in-page anchors, broken relative links, out-of-order steps, unclosed code fences, skipped heading levels and straight quotes or three dots in prose, and runs the linter a guide ships with its scripts (all files outside archive are checked when no file is given).
 
 ```console
 $ node scripts/lint.ts how-to-harden-firefox/README.md

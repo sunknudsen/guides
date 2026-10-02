@@ -98,9 +98,10 @@ Deployable versions of a guide’s settings for organizations live in an `enterp
 
 ## After editing
 
-Run both on the edited guide and fix what they report before reporting the edit done:
+Run these on the edited guide and fix what they report before reporting the edit done:
 
 - `node scripts/organize-steps.ts guide/README.md`
+- `node scripts/check-links.ts guide/README.md` (needs the network)
 - `node scripts/lint.ts guide/README.md`
 
 The user previews the guide in a browser and publishes it by committing… suggest previewing rather than reporting it done.
