@@ -1,0 +1,101 @@
+{
+  "AIControls": {
+    "Default": {
+      "Locked": true,
+      "Value": "blocked"
+    }
+  },
+  "AutofillAddressEnabled": false,
+  "AutofillCreditCardEnabled": false,
+  "DNSOverHTTPS": {
+    "Enabled": true,
+    "Fallback": false,
+    "Locked": true,
+    "ProviderURL": "https://dns.quad9.net/dns-query"
+  },
+  "DisableFeedbackCommands": true,
+  "DisableFirefoxAccounts": true,
+  "DisableFirefoxStudies": true,
+  "DisableFormHistory": true,
+  "DisableProfileImport": true,
+  "DisableRemoteImprovements": true,
+  "DisableSetDesktopBackground": true,
+  "DisableTelemetry": true,
+  "EnableTrackingProtection": {
+    "BaselineExceptions": false,
+    "Category": "strict",
+    "ConvenienceExceptions": false,
+    "Cryptomining": true,
+    "EmailTracking": true,
+    "Fingerprinting": true,
+    "Locked": true,
+    "SuspectedFingerprinting": true,
+    "Value": true
+  },
+  "FirefoxHome": {
+    "Highlights": false,
+    "Locked": true,
+    "Pocket": false,
+    "Search": false,
+    "Snippets": false,
+    "SponsoredPocket": false,
+    "SponsoredStories": false,
+    "SponsoredTopSites": false,
+    "Stories": false,
+    "TopSites": false,
+    "Weather": false,
+    "Widgets": {
+      "Enabled": false
+    }
+  },
+  "FirefoxSuggest": {
+    "ImproveSuggest": false,
+    "Locked": true,
+    "SponsoredSuggestions": false,
+    "WebSuggestions": false
+  },
+  "Homepage": {
+    "Locked": true,
+    "StartPage": "none"
+  },
+  "HttpsOnlyMode": "force_enabled",
+  "NetworkPrediction": false,
+  "NewTabPage": false,
+  "OfferToSaveLogins": false,
+  "PasswordManagerEnabled": false,
+  "SanitizeOnShutdown": {
+    "Cache": true,
+    "Cookies": true,
+    "Downloads": true,
+    "FormData": true,
+    "History": true,
+    "Locked": true,
+    "OfflineApps": true,
+    "Sessions": true,
+    "SiteSettings": true
+  },
+  "SearchEngines": {
+    "Default": "DuckDuckGo",
+    "PreventInstalls": true,
+    "Remove": [
+      "Bing",
+      "Google",
+      "Perplexity",
+      "Reddit",
+      "Wikipedia (en)",
+      "YouTube",
+      "eBay"
+    ]
+  },
+  "SearchSuggestEnabled": false,
+  "UserMessaging": {
+    "ExtensionRecommendations": false,
+    "FeatureRecommendations": false,
+    "FirefoxLabs": false,
+    "Locked": true,
+    "MoreFromMozilla": false,
+    "SkipOnboarding": true,
+    "UrlbarInterventions": false,
+    "WhatsNew": false
+  }
+}
