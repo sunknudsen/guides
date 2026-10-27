@@ -9,7 +9,7 @@ Guides are published on GitHub for readers who may have little technical backgro
 
 ## Audience
 
-- Keep guides short. No lists of preferences, no technical asides, no reference sections… one plain-language heads-up beats a section explaining side effects.
+- Keep guides short. No lists of preferences, no technical asides, no reference material outside Technical notes… one plain-language heads-up beats a section explaining side effects.
 - A Highlights section follows the abstract with what following the guide achieves… only outcomes a reader would change their behaviour for, ordered from most to least critical, each a bold lead-in followed by one sentence that says what the reader gets, no settings names, and anything that needs a caveat to be true is left out.
 - Never require readers to type or quote paths. Use “Show in Finder” and drag and drop into Terminal, and show the resulting `cd` as an example they will recognise.
 - Prefer first-party sources (GitHub, Firefox source, vendor documentation) and avoid third-party scripts. When a script is unavoidable, ship our own, short enough to audit.
@@ -20,7 +20,7 @@ Guides are published on GitHub for readers who may have little technical backgro
 ```markdown
 # How to …
 
-One-paragraph abstract: what the guide protects against and what readers get, ending with a link to the enterprise README when the guide ships one.
+One-paragraph abstract: what the guide protects against and what readers get, ending with a link to the enterprise README when the guide ships one or to [technical notes](#technical-notes) when the guide has them.
 
 ## Highlights
 
@@ -45,6 +45,10 @@ Instruction, or several h4 sub-steps.
 
 Last instruction.
 
+## Technical notes
+
+### Topic…
+
 ---
 
 Found this guide useful? [Star repo](https://github.com/sunknudsen/guides) or [support project](https://sunknudsen.com/donate).
@@ -57,6 +61,7 @@ See `how-to-harden-firefox/README.md` for a complete guide following these conve
 - Sub-steps are h4 headings only when a step has several. A step with a single instruction states it as a plain sentence.
 - Usage sections are h3 headings describing the task, not steps.
 - Setup, update and revert sections are self-contained… repeat commands rather than referring readers to other steps for them.
+- Technical notes, when a guide has them, are the last h2 before the support footer and are written for technical readers… what each setting does and why, minimum versions and caveats, how shipped files are applied per platform, tooling and upstream documentation. Full sentences, h3 subsections only when there is more than one topic, tables and setting names allowed, typography and link rules still apply. Nothing a step depends on lives only there… what matters for a step is a heads-up on that step. List what upstream documentation does not say (platform blocks, version floors, UI that does not reflect enforcement, deliberate omissions and why), never what a setting does.
 - No horizontal rules next to headings (GitHub already underlines h2)… the only rule is the one separating the support footer from the last instruction.
 - Every guide ends with the support footer shown above, word for word, after a horizontal rule.
 
