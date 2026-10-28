@@ -11,7 +11,7 @@ Guides are published on GitHub for readers who may have little technical backgro
 
 - Keep guides short. No lists of preferences, no technical asides, no reference material outside Technical notes… one plain-language heads-up beats a section explaining side effects.
 - A Highlights section follows the abstract with what following the guide achieves… only outcomes a reader would change their behaviour for, ordered from most to least critical, each a bold lead-in followed by one sentence that says what the reader gets, no settings names, and anything that needs a caveat to be true is left out.
-- Never require readers to type or quote paths. Use “Show in Finder” and drag and drop into Terminal, and show the resulting `cd` as an example they will recognise.
+- Never require readers to type or quote paths that differ between readers. A path that is the same for everyone (`~/Downloads`) is pasted as a command… anything else uses “Show in Finder” and drag and drop into Terminal, with the resulting `cd` shown as an example they will recognise.
 - Prefer first-party sources (GitHub, Firefox source, vendor documentation) and avoid third-party scripts. When a script is unavoidable, ship our own, short enough to audit.
 - Everything a reader does not need is out of the guide.
 
