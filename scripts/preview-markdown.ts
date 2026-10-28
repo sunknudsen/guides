@@ -349,7 +349,7 @@ const openBrowser = (): void => {
 
 if (token === undefined) {
   console.warn(
-    "GITHUB_TOKEN is not set, requests are limited to 60 per hour (see README.md)"
+    "GITHUB_TOKEN is not set, requests are limited to 60 per hour (see CONTRIBUTING.md)"
   )
 }
 

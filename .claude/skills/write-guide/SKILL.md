@@ -107,4 +107,6 @@ Run these on the edited guide and fix what they report before reporting the edit
 - `node scripts/check-links.ts guide/README.md` (needs the network)
 - `node scripts/lint.ts guide/README.md`
 
+The root README lists every guide with a one-sentence summary of its abstract… add the line when a guide is created and update it when a guide is renamed or its abstract changes.
+
 The user previews the guide in a browser and publishes it by committing… suggest previewing rather than reporting it done.

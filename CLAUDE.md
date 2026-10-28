@@ -1,6 +1,6 @@
 # Guides
 
-Collection of privacy and security guides published on GitHub for readers of all technical backgrounds. Guides live in top-level folders (`how-to-harden-firefox/README.md`), the `archive` folder is frozen and left as is. When creating or editing a guide, use the `write-guide` skill.
+Collection of privacy and security guides published on GitHub for readers of all technical backgrounds. Guides live in top-level folders (`how-to-harden-firefox/README.md`) and are listed with a one-sentence summary in the root README, the `archive` folder is frozen and left as is. When creating or editing a guide, use the `write-guide` skill.
 
 ## Tooling
 
@@ -9,7 +9,7 @@ Collection of privacy and security guides published on GitHub for readers of all
 - Comments follow one shape. Commands (scripts, hook, shell scripts) open with a one-sentence summary, a blank line, a `Usage:` line, a blank line and details in full sentences. Modules in `scripts/utilities/` open with a label sentence (“Formatting linter.”, “Path helpers.”) followed by full sentences. Inline comments are either one sentence without a full stop (clauses separated with “…”) or several sentences with full stops.
 - Only dependencies are `@sunknudsen/typography`, `@types/node`, `github-markdown-css`, `prettier` and `typescript`… do not add more. The user updates them on the host (`npm update --save` within current ranges, `npm install package@latest` for major versions)… never run npm install or update here.
 - Preview server stays bound to 127.0.0.1 with Host validation, never serves dotfiles and keeps the token server-side.
-- Git hooks live in `.githooks` and are registered with `git config core.hooksPath .githooks`, no husky or other hook managers… npm’s `prepare` script does this on install, but not when scripts are ignored, so the README documents the command.
+- Git hooks live in `.githooks` and are registered with `git config core.hooksPath .githooks`, no husky or other hook managers… npm’s `prepare` script does this on install, but not when scripts are ignored, so CONTRIBUTING.md documents the command.
 
 ## Typography
 
