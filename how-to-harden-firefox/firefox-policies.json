@@ -62,6 +62,8 @@
   "NetworkPrediction": false,
   "NewTabPage": false,
   "OfferToSaveLogins": false,
+  "OverrideFirstRunPage": "",
+  "OverridePostUpdatePage": "",
   "PasswordManagerEnabled": false,
   "SanitizeOnShutdown": {
     "Cache": true,
