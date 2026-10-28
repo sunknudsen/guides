@@ -19,10 +19,10 @@
     "typecheck": "tsc"
   },
   "devDependencies": {
-    "@sunknudsen/typography": "^1.0.0",
-    "@types/node": "^22.20.4",
+    "@sunknudsen/typography": "^1.0.1",
+    "@types/node": "^22.20.5",
     "github-markdown-css": "^5.9.0",
-    "prettier": "^3.9.9",
+    "prettier": "^3.9.10",
     "typescript": "^5.9.3"
   },
   "prettier": {
