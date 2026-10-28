@@ -7,6 +7,7 @@
 
 import { readFile } from "node:fs/promises"
 import { dirname, extname, join, resolve } from "node:path"
+import { findIssue } from "@sunknudsen/typography"
 import { exists } from "./paths.ts"
 import { root, type Linter, type Problem } from "./run.ts"
 import { slug } from "./slug.ts"
@@ -24,8 +25,9 @@ const closingFenceRegExp = /^(?:> ?)? {0,3}(`{3,}|~{3,}) *$/
 const quotedRegExp = /^ {0,3}>/
 
 // Reports broken in-page anchors, broken relative links, out-of-order steps,
-// unclosed code fences, skipped heading levels and straight quotes or three
-// dots in prose. Files that are not markdown are skipped.
+// unclosed code fences, skipped heading levels and Oxford commas, straight
+// quotes or three dots in prose (see typography.ts). Files that are not
+// markdown are skipped.
 export const markdownLinter: Linter = {
   name: "Markdown",
   lint: async (file) => {
@@ -118,7 +120,7 @@ export const markdownLinter: Linter = {
         }
       }
 
-      // Inline code is neither a link nor prose
+      // Inline code is not a link
       const text = line.replace(/`[^`]*`/g, "")
 
       // Defer links until every heading is known
@@ -126,13 +128,11 @@ export const markdownLinter: Linter = {
         links.push({ line: number, target: match[2] })
       }
 
-      // Typography applies to prose only, so drop link targets and HTML too
-      const prose = text.replace(linkRegExp, "$1").replace(/<[^>]*>/g, "")
-      if (/["']/.test(prose)) {
-        problems.push({ line: number, message: "Straight quote in prose" })
-      }
-      if (/\.\.\./.test(prose)) {
-        problems.push({ line: number, message: "Three dots in prose" })
+      // Typography applies to prose only… findIssue skips inline code, URLs,
+      // HTML tags and link targets itself
+      const issue = findIssue(line)
+      if (issue !== null) {
+        problems.push({ line: number, message: issue.message })
       }
     }
 

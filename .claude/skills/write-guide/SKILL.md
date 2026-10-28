@@ -1,6 +1,6 @@
 ---
 name: write-guide
-description: Conventions for writing and editing guides in this repository (structure, steps, heads-ups, text style, links, console blocks and checks). Use whenever a guide README.md is created or edited.
+description: Conventions for writing and editing guides in this repository (structure, steps, heads-ups, text style, links, console blocks, files shipped with a guide and checks). Use whenever a guide README.md or a file shipped with a guide is created or edited.
 ---
 
 # Write guide
@@ -10,7 +10,7 @@ Guides are published on GitHub for readers who may have little technical backgro
 ## Audience
 
 - Keep guides short. No lists of preferences, no technical asides, no reference material outside Technical notes… one plain-language heads-up beats a section explaining side effects.
-- A Highlights section follows the abstract with what following the guide achieves… only outcomes a reader would change their behaviour for, ordered from most to least critical, each a bold lead-in followed by one sentence that says what the reader gets, no settings names, and anything that needs a caveat to be true is left out.
+- A Highlights section follows the abstract with what following the guide achieves… only outcomes a reader would change their behaviour for, ordered from most to least critical, each a bold lead-in followed by one sentence that says what the reader gets with no settings names. Anything that needs a caveat to be true is left out.
 - Never require readers to type or quote paths that differ between readers. A path that is the same for everyone (`~/Downloads`) is pasted as a command… anything else uses “Show in Finder” and drag and drop into Terminal, with the resulting `cd` shown as an example they will recognise.
 - Prefer first-party sources (GitHub, Firefox source, vendor documentation) and avoid third-party scripts. When a script is unavoidable, ship our own, short enough to audit.
 - Everything a reader does not need is out of the guide.
@@ -97,9 +97,7 @@ See `how-to-harden-firefox/README.md` for a complete guide following these conve
 
 ## Files shipped with a guide
 
-Scripts and settings files shipped with a guide follow the tooling rules in CLAUDE.md, and guide-specific facts live there too. Shell scripts are executable (`chmod +x`, git records the bit… check with `git ls-files -s`), even though guides run them with `sh` so readers need no `chmod`.
-
-Deployable versions of a guide’s settings for organizations live in an `enterprise` folder with its own README.md… the guide’s abstract links to it in one sentence and says nothing more about it. That README is written for administrators… it follows the typography and link rules but not the step structure, and anything generated from the guide’s settings says so and is checked by the guide’s linter, which lives with the guide’s other scripts in its `scripts` folder (see `how-to-harden-firefox/enterprise/` and `how-to-harden-firefox/scripts/`).
+Files readers download or run live in the guide’s folder and tooling for maintaining them in its `utilities/` folder… both are documented in the guide’s technical notes, never here (see the Search engines and Deployments notes of `how-to-harden-firefox/README.md`). Shell scripts are POSIX `sh`, bash only for features sh lacks such as arrays or process substitution (shebang and the command readers run then both say bash), with `set -o errexit` and `set -o nounset` (long form), `printf` never `echo`, fail closed when a required tool is missing, offer `--dry-run` before writing, back up what they overwrite. They are executable (`chmod +x`, git records the bit… check with `git ls-files -s`), even though guides run them with `sh` so readers need no `chmod`. Comments follow the shape given in CLAUDE.md.
 
 ## After editing
 

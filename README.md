@@ -67,7 +67,7 @@ In VS Code, run the “Organize steps” task to organize the current file.
 
 ### Check links
 
-Checks the links in guides, documentation and comments, reporting each place a link appears as file:line… a link is dead when the server cannot be reached or answers 404 or 410, moved when a permanent redirect leads to another address (redirects that only add a locale segment such as “/en-US/” are ignored, as Mozilla’s sites add one to every link) and unverifiable when the server keeps throttling or answers with a bot challenge page instead of the content. Hosts are fetched one link at a time, up to ten hosts at once, and a link throttled with 429 or 503 is retried once after the pause the server asks for. Mozilla’s support site challenges every page, so its knowledge base links are checked through the article’s discussion feed, which Mozilla leaves open for feed readers and answers 404 for a missing article (a renamed article keeps its feed, so a move there goes unnoticed). Dead and moved links exit with status 1, unverifiable ones are listed for a check in a browser (all text files outside archive are checked when no file is given). Needs the network, so it is run by hand rather than by the linter… run it now and then, and before publishing a guide.
+Checks the links in guides, documentation and comments, reporting each place a link appears as file:line… a link is dead when the server cannot be reached or answers 404 or 410, moved when a permanent redirect leads to another address (redirects that only add a locale segment such as “/en-US/” are ignored, as Mozilla’s sites add one to every link) and unverifiable when the server keeps throttling or answers with a bot challenge page instead of the content. Hosts are fetched one link at a time (up to ten hosts at once) and a link throttled with 429 or 503 is retried once after the pause the server asks for. Mozilla’s support site challenges every page, so its knowledge base links are checked through the article’s discussion feed, which Mozilla leaves open for feed readers and answers 404 for a missing article (a renamed article keeps its feed, so a move there goes unnoticed). Dead and moved links exit with status 1, unverifiable ones are listed for a check in a browser (all text files outside archive are checked when no file is given). Needs the network, so it is run by hand rather than by the linter… run it from time to time and before publishing a guide.
 
 ```console
 $ node scripts/check-links.ts how-to-harden-firefox/README.md
@@ -77,7 +77,7 @@ In VS Code, run the “Check links” task to check the current file.
 
 ### Lint
 
-Checks that files are formatted by [Prettier](https://prettier.io/), reporting the lines that differ from what Prettier would produce (run `npm run format` to fix), and checks guides for broken in-page anchors, broken relative links, out-of-order steps, unclosed code fences, skipped heading levels and straight quotes or three dots in prose, and runs the linter a guide ships with its scripts (all files outside archive are checked when no file is given).
+Checks that files are formatted by [Prettier](https://prettier.io/), reporting the lines that differ from what Prettier would produce (run `npm run format` to fix) and checks guides for broken in-page anchors, broken relative links, out-of-order steps, unclosed code fences, skipped heading levels and Oxford commas, straight quotes or three dots in prose, the typography rules of [@sunknudsen/typography](https://www.npmjs.com/package/@sunknudsen/typography) (all files outside archive are checked when no file is given).
 
 ```console
 $ node scripts/lint.ts how-to-harden-firefox/README.md
@@ -85,4 +85,4 @@ $ node scripts/lint.ts how-to-harden-firefox/README.md
 
 In VS Code, run the “Lint” task to lint the current file.
 
-Staged files are also linted before each commit by [.githooks/pre-commit](./.githooks/pre-commit) (see [Setup](#setup) to register hook). To run one linter only, use `scripts/lint-formatting.ts` or `scripts/lint-markdown.ts` the same way. A guide may ship tooling of its own in its scripts folder, documented there (see [how-to-harden-firefox/scripts](./how-to-harden-firefox/scripts/)).
+Staged files are also linted before each commit by [.githooks/pre-commit](./.githooks/pre-commit) (see [Setup](#setup) to register hook). To run one linter only, use `scripts/lint-formatting.ts` or `scripts/lint-markdown.ts` the same way. A guide may ship tooling of its own in its utilities folder, documented in the guide (see [how-to-harden-firefox](./how-to-harden-firefox/README.md#technical-notes)).
