@@ -1,6 +1,6 @@
 # Guides
 
-This is a collection of guides (in the making) I use to configure my hardware and software for increased privacy and security (or to unlock superproductivity).
+Configure hardware and software for more privacy and security (or superproductivity).
 
 - [How to harden Firefox](./how-to-harden-firefox/README.md)… hardens Firefox on macOS and Linux against the sites visited, the network in between and Mozilla itself, using enterprise policies alone.
 
